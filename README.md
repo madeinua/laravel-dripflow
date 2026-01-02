@@ -80,9 +80,9 @@ $events = DripFlow::getStreamEvents($user, $stream);
 
 foreach ($events as $event) {
     if ($event->state->isOpened()) {
-        // Show full content
+        // Show full content: $event->getPayload()
     } elseif ($event->state->isLocked()) {
-        // Show teaser (time remaining: $event->timeRemaining())
+        // Show teaser: $event->getPayload(), $event->timeRemaining()
     }
 }
 ```
